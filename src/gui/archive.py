@@ -5,86 +5,87 @@
 archive of all past searched vocabulary
 links to lexigrah view when clicked on architeved words
 '''
+
 from core import program
 import random
 import string
 import requests
 from gui.objectLib import*
-pgrmdata = program.data
+pgrmData = program.data
 
-def init(data, pgrmdata):
+def init(data, pgrmData):
     '''
     initiate data in the current mode
     '''
-    data.scrolly = 0
-    data.scrollspeed = 10
-    data.guielem = createguielem(data, pgrmdata)
-    data.newwords = program.getnewwords(pgrmdata)
-    data.archivedwords = createarchivedwords(data, pgrmdata)
-    pgrmdata.initmode = False    # init once only
+    data.scrollY = 0
+    data.scrollSpeed = 10
+    data.guiElem = createGuiElem(data, pgrmData)
+    data.newWords = program.getNewWords(pgrmData)
+    data.archivedWords = createArchivedWords(data, pgrmData)
+    pgrmData.initMode = False    # init once only
 
-def createguielem(data, pgrmdata):
+def createGuiElem(data, pgrmData):
     '''
-    create gui element in archive
+    create GUI element in archive
     '''
     elems = []
-    x, y = pgrmdata.margincenleft, pgrmdata.margincentop
+    x, y = pgrmData.marginCenLeft, pgrmData.marginCenTop
     space = 40
     options = ['// archivedbetical', '// by level', '// randomized']
     for opt in options:
         button = ClickText(name=opt, loc=(x, y+space), size=20, font='helvetica',
-                           colr=pgrmdata.txtcolr, anchor='sw')
+                           colr=pgrmData.txtColr, anchor='sw')
         elems.append(button)
         space += 50
     return elems
 
-def createarchivedwords(data, pgrmdata):
-    archivedwords = []
+def createArchivedWords(data, pgrmData):
+    archivedWords = []
     cols = 5
-    gridsize = (pgrmdata.width-pgrmdata.margincenleft)//cols
+    gridSize = (pgrmData.width-pgrmData.marginCenLeft)//cols
     i = 0
-    for word in sorted(list(data.newwords)):
-        x = pgrmdata.margincenleft+gridsize*0.25+gridsize*(i%cols)
-        y = pgrmdata.height-gridsize*(1+i//cols)
-        newwordtext = MovingText(word, loc=[x, y], size=25, colr=pgrmdata.txtcolr,
-                                     font='agaramondpro-regular', radius=40)
-        archivedwords.append(newwordtext)
+    for word in sorted(list(data.newWords)):
+        x = pgrmData.marginCenLeft+gridSize*0.25+gridSize*(i%cols)
+        y = pgrmData.height-gridSize*(1+i//cols)
+        newWordText = MovingText(word, loc=[x, y], size=25, colr=pgrmData.txtColr,
+                                     font='AGaramondPro-Regular', radius=40)
+        archivedWords.append(newWordText)
         i += 1
-    return archivedwords
+    return archivedWords
 
-def mousehovered(event, data, pgrmdata): 
-    for text in data.archivedwords:
+def mouseHovered(event, data, pgrmData): 
+    for text in data.archivedWords:
         text.hover(event)
 
-def mousescrolled(event, data, pgrmdata):
+def mouseScrolled(event, data, pgrmData):
     '''
     controls vertical mouse scroll
     '''
-    scrolly, scrollspeed = data.scrolly, data.scrollspeed
-    if event.delta > -1: scrolly += scrollspeed
-    if event.delta < 1: scrolly -= scrollspeed
-    for text in data.archivedwords:
+    scrollY, scrollSpeed = data.scrollY, data.scrollSpeed
+    if event.delta > -1: scrollY += scrollSpeed
+    if event.delta < 1: scrollY -= scrollSpeed
+    for text in data.archivedWords:
         x, y = text.loc
-        text.loc = (x, y+scrolly)
+        text.loc = (x, y+scrollY)
 
-def mousedragged(event, data, pgrmdata): pass
+def mouseDragged(event, data, pgrmData): pass
 
-def mousereleased(event, data, pgrmdata): pass
+def mouseReleased(event, data, pgrmData): pass
 
-def mousepressed(event, data, pgrmdata):
-    for text in data.archivedwords:
+def mousePressed(event, data, pgrmData):
+    for text in data.archivedWords:
         if text.click(event):
-            pgrmdata.searchword = text.name
-            pgrmdata.mode = 'lexigraph'
-            pgrmdata.initmode = True
+            pgrmData.searchWord = text.name
+            pgrmData.mode = 'lexigraph'
+            pgrmData.initMode = True
     
-def keypressed(event, data, pgrmdata): pass
+def keyPressed(event, data, pgrmData): pass
 
-def timerfired(data, pgrmdata): pass
+def timerFired(data, pgrmData): pass
 
-def redrawall(canvas, data): 
-    for text in data.archivedwords:
-        text.viscircle(canvas, text.radius)
+def redrawAll(canvas, data): 
+    for text in data.archivedWords:
+        text.visCircle(canvas, text.radius)
         text.draw(canvas)
-        text.cirhighlight(canvas)
-data = program.struct()
+        text.cirHighlight(canvas)
+data = program.Struct()
