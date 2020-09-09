@@ -7,11 +7,11 @@ either on automated word recommendation
 or on users's recently learned words
 '''
 
-import program
+from core import program
 import string
 import requests
 from bs4 import BeautifulSoup
-from objectLib import*
+from gui.objectLib import*
 pgrmData = program.data
 
 def getSentence(word):

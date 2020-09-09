@@ -6,7 +6,7 @@ returns a probability assignment on the 1/3 million
 most frequently searched words from Google Web Trillion
 Word Corpus
 '''
-from wordFreqency import wordFreqDict
+from core.wordFreqency import wordFreqDict
 
 ##############################
 # file IO

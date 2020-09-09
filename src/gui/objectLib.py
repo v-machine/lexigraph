@@ -5,7 +5,7 @@
 import random
 import string
 import math
-from wordFreqency import wordFreqDict
+from core.wordFreqency import wordFreqDict
 
 class Circle(object):
     def __init__(self, loc, radius, colr):

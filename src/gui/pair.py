@@ -5,11 +5,11 @@
 word paring game used for strengthening
 freshly learned or unfamiliar words
 '''
-import program
+from core import program
 import random
 import string
 import requests
-from objectLib import*
+from gui.objectLib import*
 pgrmData = program.data
 
 def init(data, pgrmData):

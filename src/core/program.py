@@ -2,9 +2,9 @@
 # program data
 ########################################
 from nltk.corpus import wordnet
-from wordFreqency import wordFreqDict
-import vocabEstm
-from objectLib import*
+from core.wordFreqency import wordFreqDict
+from core import vocabEstm 
+from gui.objectLib import*
 
 class Struct(object): pass
 data = Struct()

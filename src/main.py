@@ -7,9 +7,9 @@ the program and controls various mode switch
 '''
 from tkinter import*
 from nltk.corpus import wordnet
-from objectLib import*
-import program
-import search, dictionary, lexigraph, explore, pair, archive
+from gui.objectLib import*
+from core import program
+from gui import search, dictionary, lexigraph, explore, pair, archive
 pgrmData = program.data
 
 ########################################

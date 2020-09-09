@@ -4,9 +4,9 @@
 '''
 search function allowing users to search words
 '''
-import program
+from core import program
 import string
-from objectLib import*
+from gui.objectLib import*
 pgrmData = program.data
 
 def init(data, pgrmData):

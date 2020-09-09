@@ -4,8 +4,8 @@
 '''
 displays search result in dictionary
 '''
-import program
-from objectLib import*
+from core import program
+from gui.objectLib import*
 pgrmData = program.data
 
 def init(data, pgrmData):
