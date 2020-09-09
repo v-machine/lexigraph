@@ -2,16 +2,14 @@
 
 Lexigraph is a full-stack thesaurus-based vocabulary building application. 
 
-The application utilizes lexical relationships between a search word and its synonyms (as pertained to each part-of-speech definition) to aid vocabulary learning. 
+The application displays lexical relationships between a new word and its synonyms (as pertained to each part-of-speech definition) to aid vocabulary learning. In other words, users can comprehend new words through familar ones. To achieve this, the application utilizes WordNet API from NLTK and visualizes lexical connections between a search word its synonyms as a graph. Users can interact with the graph to indicate known words and unknowns. In the meantime, a cluster algorithm in the backend partitions a vocabulary space (Google's Web Trillion Word Corpus) based on distribution of known words and assign each cluster an estimated known probability. Using these probability assignment, the application will automatically highlight "known" synonyms in all subsequent search visulization.
 
-In the lexigraph display mode, users can highlight to indicate words they know, or dehighlight to indicate ones unknown. The application will refine its estimation of user's presumed known words and automatically highlight them in all subsequent searches.
-
-This is a three-week capstone project for CMU 15112: Fundamentals of Programming and Computer Science, Fall 2018.
+This is a three-week capstone project for CMU 15112: Fundamentals of Programming and Computer Science, Fall 2018, implemented entirely in python.
 
 ## Menu
 ![](/demo/gif/00_menu.gif)
 
-## Searching A Word
+## Looking Up A New Word
 ![](/demo/gif/01_search_def.gif)
 
 ## Interact to Indicate Word Familiarity
@@ -24,7 +22,7 @@ This is a three-week capstone project for CMU 15112: Fundamentals of Programming
 ## Conventional Dictionary View
 ![](/demo/gif/05_dict.gif)
 
-## Get Latest Usage from Web
+## Get The Latest Usage from The Web
 ![](/demo/gif/06_explore.gif)
 
 ## Paring Game to Strenthen Retention
