@@ -54,5 +54,6 @@ The cluster algorithm in the backend estimates the probabilities of a word known
 ### Installation
 Pip install requirement.txt. For Mac OS and Unix users, please also make sure that Tkinter is installed. 
 `$pip3 install -r requirement.txt`
+
 Run main.py to use the application.
 `$python3 main.py`
