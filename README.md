@@ -47,5 +47,5 @@ All previously searched words is stored in the archive for easy retrieval.
 ![](/demo/gif/08_archive.gif)
 
 ## Backend Cluster Algorithm
-a cluster algorithm in the backend partitions a vocabulary space (Google's Web Trillion Word Corpus) based on distribution of known words and assign each cluster an estimated known probability. 
+The cluster algorithm in the backend estimates the probabilities of a word known by a given user. The design is based on the premise that words commonly used (i.e., higher frequency in a given corpus) are less difficult than rarer words. Therefore, a vocabulary space can be sorted by word frequencies and by proxy their level of difficulty. In this prototype, a sorted list of 30,000 words from Google's Web Trillion Word Corpus forms a constrained vocabulary space. Based on real-time user interactions, the cluster algorithm partitions the vocabulary space and assigns a probability to each secton according to distributon densities of user-indicated known words. For instance, a region densely populated by user-indicated known words has a higher known probability. In subsequent search, synonym with known probability above mean is automatically highlighted to aid user's comprehension of a new word.
 ![](/demo/gif/09_backend.gif)
