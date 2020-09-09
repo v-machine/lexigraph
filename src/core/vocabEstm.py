@@ -74,12 +74,12 @@ def getClusterProb(wordFreqDict, wordList):
         if distDiff[i] > meanDistDiff:
             splits.append(freqRank[i])
             probList.append(prob)
-            prob = 0
     
     # normalize probList:
     total = sum(probList)
     for prob in probList:
         prob /= total
+        prob = round(prob, 3)
 
     # print('splits:', splits)
     # print('probList:', probList)
@@ -95,7 +95,7 @@ def getClusterProb(wordFreqDict, wordList):
         if splits[-1] != freqRank[-1]: 
             splitDict[(splits[-1], freqRank[-1])] = 1-sum(probList)
 
-    print(splitDict)
+    print(f"word list partition: {splitDict}")
     return splitDict
 
 def getFreqRank(wordFreqDict, wordList):

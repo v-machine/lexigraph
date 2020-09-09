@@ -31,4 +31,4 @@ def getWordFreqDict(fileName):
         rank += 1
     return wordFreqDict
 
-wordFreqDict = getWordFreqDict('unigram_freq.csv')
+wordFreqDict = getWordFreqDict('data/unigram_freq.csv')

@@ -147,8 +147,9 @@ def run(width=300, height=300):
 
     # cite: https://stackoverflow.com/questions/18537918/set-window-icon
     root = Tk(className = ' Lexigraph')
-    root.iconbitmap('icon.ico')
+    root.iconbitmap('assets/icon.ico')
     root.resizable(width=False, height=False)
+    root.geometry(f"{pgrmData.width}x{pgrmData.height}+200+200")
 
     # create the root and the canvas
     canvas = Canvas(root, width=pgrmData.width, height=pgrmData.height)
@@ -170,10 +171,6 @@ def run(width=300, height=300):
     root.bind("<Key>", lambda event:
                             keyPressedWrapper(event, canvas, pgrmData))
     timerFiredWrapper(canvas, pgrmData)
-
-    # cite: https://stackoverflow.com/questions/18394597/
-    # is-there-a-way-to-create-transparent-windows-with-tkinter
-    root.attributes('-alpha', 1)
 
     # and launch the app
     root.mainloop()  # blocks until window is closed
