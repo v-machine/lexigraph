@@ -7,6 +7,14 @@ The application displays lexical relationships between a new word and its synony
 This is a three-week capstone project for CMU 15112: Fundamentals of Programming and Computer Science, Fall 2018, implemented entirely in python.
 
 ## Menu
+In the main interface, users can choose the following modes to interact with new vocabularies.
+LEXIGRAPH: visulizes the lexical relationships between a vocabulary and its synonyms.
+explore: get the latest usage from Marriam Webster
+search: look up a new word and return result as a lexigraph
+dictionary: conventional dictionary definition provided by WordNet
+pair: timed paring game for learned synonyms
+archive: find all previously searched vocabularies
+
 ![](/demo/gif/00_menu.gif)
 
 ## Looking Up A New Word
